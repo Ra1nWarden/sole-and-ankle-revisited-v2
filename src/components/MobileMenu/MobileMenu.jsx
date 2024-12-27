@@ -43,7 +43,7 @@ const MobileMenu = ({ isOpen, onDismiss }) => {
 
 const Wrapper = styled(Dialog.Content)`
   display: flex;
-  background-color: ${COLORS.white};
+  background-color: var(--color-white);
   flex-direction: column;
   position: fixed;
   top: 0;
@@ -65,12 +65,12 @@ const Link = styled.a`
   text-decoration: none;
   display: block;
   nav & {
-    color: ${COLORS.gray[900]};
+    color: var(--color-gray-900);
     font-size: 18px;
     margin-top: 22px;
   }
   footer & {
-    color: ${COLORS.gray[700]};
+    color: var(--color-gray-700);
     font-size: 14px;
     margin-top: 14px;
   }

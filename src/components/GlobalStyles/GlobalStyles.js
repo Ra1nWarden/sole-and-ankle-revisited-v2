@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { COLORS } from '../../constants';
 
 const GlobalStyles = createGlobalStyle`
 /* http://meyerweb.com/eric/tools/css/reset/
@@ -64,6 +65,17 @@ table {
     float above the app.
   */
   isolation: isolate;
+}
+
+html {
+  --color-gray-100: ${COLORS.gray[100]};
+  --color-gray-300: ${COLORS.gray[300]};
+  --color-gray-500: ${COLORS.gray[500]};
+  --color-gray-700: ${COLORS.gray[700]};
+  --color-gray-900: ${COLORS.gray[900]};
+  --color-primary: ${COLORS.primary};
+  --color-secondary: ${COLORS.secondary};
+  --color-white: ${COLORS.white};
 }
 
 html, body, #root {

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { COLORS, QUERIES } from '../../constants';
+import { QUERIES } from '../../constants';
 
 import SearchInput from '../SearchInput';
 import UnstyledButton from '../UnstyledButton';
@@ -30,8 +30,8 @@ const Wrapper = styled.div`
   align-items: center;
   gap: 24px;
   font-size: 0.875rem;
-  color: ${COLORS.gray[300]};
-  background-color: ${COLORS.gray[900]};
+  color: var(--color-gray-300);
+  background-color: var(--color-gray-900);
   height: 40px;
   padding-left: 32px;
   padding-right: 32px;
@@ -47,12 +47,12 @@ const Spacer = styled.div`
   @media ${QUERIES.laptopAndBelow} {
     display: block;
     height: 4px;
-    background-color: ${COLORS.gray[900]};
+    background-color: var(--color-gray-900);
   }
 `;
 
 const MarketingMessage = styled.span`
-  color: ${COLORS.white};
+  color: var(--color-gray-white);
   margin-right: auto;
 `;
 
