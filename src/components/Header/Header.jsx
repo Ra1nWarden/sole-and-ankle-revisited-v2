@@ -1,11 +1,13 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import { QUERIES, WEIGHTS } from '../../constants';
-import Logo from '../Logo';
-import SuperHeader from '../SuperHeader';
-import MobileMenu from '../MobileMenu';
-import Icon from '../Icon';
+import { QUERIES, WEIGHTS } from "../../constants";
+import Logo from "../Logo";
+import SuperHeader from "../SuperHeader";
+import MobileMenu from "../MobileMenu";
+import Icon from "../Icon";
+import UnstyledButton from "../UnstyledButton";
+import VisuallyHidden from "../VisuallyHidden";
 
 const Header = () => {
   const [showMobileMenu, setShowMobileMenu] = React.useState(false);
@@ -26,11 +28,23 @@ const Header = () => {
           <NavLink href="/collections">Collections</NavLink>
         </Nav>
         <Side>
-        <MobileHeader>
-          <Icon id="shopping-bag" strokeWidth={1} />
-          <Icon id="search" strokeWidth={1} />
-          <Icon id="menu" strokeWidth={1} onClick={() => setShowMobileMenu(true)}/>
-        </MobileHeader>
+          <MobileHeader>
+            <UnstyledButton>
+              <Icon id="shopping-bag" />
+              <VisuallyHidden>Open cart</VisuallyHidden>
+            </UnstyledButton>
+            <UnstyledButton>
+              <Icon id="search" />
+              <VisuallyHidden>Search</VisuallyHidden>
+            </UnstyledButton>
+            <UnstyledButton>
+              <Icon
+                id="menu"
+                onClick={() => setShowMobileMenu(true)}
+              />
+              <VisuallyHidden>Menu</VisuallyHidden>
+            </UnstyledButton>
+          </MobileHeader>
         </Side>
       </MainHeader>
 
@@ -48,6 +62,12 @@ const MainHeader = styled.div`
   padding: 18px 32px;
   height: 72px;
   border-bottom: 1px solid var(--color-gray-300);
+  
+  @media ${QUERIES.laptopAndBelow} {
+    border-top: 4px solid var(--color-gray-900);
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 `;
 
 const Nav = styled.nav`
@@ -63,7 +83,7 @@ const Nav = styled.nav`
 
 const MobileHeader = styled.div`
   display: none;
-  
+
   @media ${QUERIES.laptopAndBelow} {
     display: flex;
     justify-content: end;

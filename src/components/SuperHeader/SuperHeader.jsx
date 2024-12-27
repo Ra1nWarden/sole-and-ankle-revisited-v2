@@ -20,7 +20,6 @@ const SuperHeader = () => {
         <Icon id="shopping-bag" strokeWidth={1} />
       </UnstyledButton>
     </Wrapper>
-    <Spacer />
     </>
   );
 };
@@ -38,16 +37,6 @@ const Wrapper = styled.div`
   
   @media ${QUERIES.laptopAndBelow} {
     display: none;
-  }
-`;
-
-const Spacer = styled.div`
-  display: none;
-
-  @media ${QUERIES.laptopAndBelow} {
-    display: block;
-    height: 4px;
-    background-color: var(--color-gray-900);
   }
 `;
 
