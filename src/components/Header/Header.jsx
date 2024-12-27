@@ -52,8 +52,9 @@ const MainHeader = styled.div`
 
 const Nav = styled.nav`
   display: flex;
-  gap: 48px;
+  gap: clamp(2rem, 2vw + 1rem, 3rem);
   margin: 0px 48px;
+  scroll: auto;
 
   @media ${QUERIES.laptopAndBelow} {
     display: none;
