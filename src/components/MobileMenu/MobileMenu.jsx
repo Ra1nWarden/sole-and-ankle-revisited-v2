@@ -5,7 +5,6 @@ import UnstyledButton from "../UnstyledButton";
 import Icon from "../Icon";
 import VisuallyHidden from "../VisuallyHidden";
 import * as Dialog from "@radix-ui/react-dialog";
-import { COLORS } from "../../constants";
 
 const MobileMenu = ({ isOpen, onDismiss }) => {
   return (
@@ -64,10 +63,15 @@ const Overlay = styled(Dialog.Overlay)`
 const Link = styled.a`
   text-decoration: none;
   display: block;
+  text-transform: uppercase;
   nav & {
     color: var(--color-gray-900);
     font-size: 18px;
     margin-top: 22px;
+  }
+  nav &:first-of-type {
+    color: var(--color-secondary);
+  
   }
   footer & {
     color: var(--color-gray-700);

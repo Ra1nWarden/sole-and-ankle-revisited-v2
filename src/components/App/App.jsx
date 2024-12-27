@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import Header from '../Header';
 import ShoeIndex from '../ShoeIndex';
+import { QUERIES } from '../../constants';
 
 const App = () => {
   const [sortId, setSortId] = React.useState('newest');
@@ -19,6 +20,14 @@ const App = () => {
 
 const Main = styled.main`
   padding: 64px 32px;
+  
+  @media ${QUERIES.laptopAndBelow} {
+    padding: 48px 32px;
+  }
+
+  @media ${QUERIES.tabletAndBelow} {
+    padding: 48px 16px;
+  }
 `;
 
 export default App;

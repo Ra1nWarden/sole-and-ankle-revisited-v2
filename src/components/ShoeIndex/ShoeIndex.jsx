@@ -9,12 +9,29 @@ import Spacer from '../Spacer';
 import ShoeSidebar from '../ShoeSidebar';
 import ShoeGrid from '../ShoeGrid';
 
+const ShoeBreadcrumbs = () => {
+  return (
+    <Breadcrumbs>
+    <Breadcrumbs.Crumb href="/">Home</Breadcrumbs.Crumb>
+    <Breadcrumbs.Crumb href="/sale">Sale</Breadcrumbs.Crumb>
+    <Breadcrumbs.Crumb href="/sale/shoes">
+      Shoes
+    </Breadcrumbs.Crumb>
+  </Breadcrumbs>
+  );
+};
+
 const ShoeIndex = ({ sortId, setSortId }) => {
   return (
     <Wrapper>
       <MainColumn>
         <Header>
-          <Title>Running</Title>
+          <TitleAndBreadcrumbs>
+            <MobileBreadcrumbs>
+              <ShoeBreadcrumbs />
+            </MobileBreadcrumbs>
+            <Title>Running</Title>
+          </TitleAndBreadcrumbs>
           <Select
             label="Sort"
             value={sortId}
@@ -28,13 +45,9 @@ const ShoeIndex = ({ sortId, setSortId }) => {
         <ShoeGrid />
       </MainColumn>
       <LeftColumn>
-        <Breadcrumbs>
-          <Breadcrumbs.Crumb href="/">Home</Breadcrumbs.Crumb>
-          <Breadcrumbs.Crumb href="/sale">Sale</Breadcrumbs.Crumb>
-          <Breadcrumbs.Crumb href="/sale/shoes">
-            Shoes
-          </Breadcrumbs.Crumb>
-        </Breadcrumbs>
+        <DesktopBreadcrumbs>
+          <ShoeBreadcrumbs />
+        </DesktopBreadcrumbs>
         <Spacer size={42} />
         <ShoeSidebar />
       </LeftColumn>
@@ -65,11 +78,32 @@ const Header = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  
+  @media ${QUERIES.laptopAndBelow} {
+    align-items: flex-end;
+  }
 `;
 
 const Title = styled.h2`
   font-size: 1.5rem;
   font-weight: ${WEIGHTS.medium};
+`;
+
+const TitleAndBreadcrumbs = styled.div`
+
+`;
+
+const DesktopBreadcrumbs = styled.div`
+  @media ${QUERIES.laptopAndBelow} {
+    display: none;
+  }
+`;
+
+const MobileBreadcrumbs = styled.div`
+  display: none;
+  @media ${QUERIES.laptopAndBelow} {
+    display: revert;
+  }
 `;
 
 export default ShoeIndex;
