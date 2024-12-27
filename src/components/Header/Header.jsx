@@ -60,8 +60,8 @@ const MainHeader = styled.div`
   display: flex;
   align-items: baseline;
   padding: 18px 32px;
-  height: 72px;
   border-bottom: 1px solid var(--color-gray-300);
+  overflow: auto;
   
   @media ${QUERIES.laptopAndBelow} {
     border-top: 4px solid var(--color-gray-900);
@@ -74,7 +74,6 @@ const Nav = styled.nav`
   display: flex;
   gap: clamp(2rem, 2vw + 1rem, 3rem);
   margin: 0px 48px;
-  scroll: auto;
 
   @media ${QUERIES.laptopAndBelow} {
     display: none;
